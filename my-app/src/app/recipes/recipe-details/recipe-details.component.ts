@@ -8,7 +8,7 @@ import { Recipe } from '../recipe.model';
 })
 export class RecipeDetailsComponent implements OnInit {
 
-  @Input() showItem: Recipe = new Recipe('','','');
+  @Input() public showItem: Recipe = new Recipe("","","");
 
   constructor() { }
 

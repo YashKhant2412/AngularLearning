@@ -8,8 +8,8 @@ import { RecipeService } from '../recipe.service';
 })
 export class RecipeListComponent implements OnInit {
 
-  @Output() selectedRecipeItem = new EventEmitter<Recipe>();
-  recipes : Recipe[];
+  @Output() public selectedRecipeItem = new EventEmitter<Recipe>();
+  public recipes : Recipe[];
 
   constructor(private recipeService : RecipeService) {
    }
@@ -18,17 +18,16 @@ export class RecipeListComponent implements OnInit {
     this.recipes = this.recipeService.getRecipe();
   }
 
-  onRecipeSelected(recipe:Recipe){
+  public onRecipeSelected(recipe:Recipe):void{
     this.selectedRecipeItem.emit(recipe);
   }
 
-  addOne(){
-    this.recipeService.recipes.push(this.recipeService.recipes[this.getRandomInt(this.recipes.length)]);
+  public addOne():void{
+    this.recipeService.addRecipe();
     this.recipes = this.recipeService.getRecipe();
-    // this.recipes.push(this.recipes[this.getRandomInt(this.recipes.length)]);
   }
 
-  getRandomInt(max:number) {
-    return Math.floor(Math.random() * max);
-  }
+ 
+
+ 
 }

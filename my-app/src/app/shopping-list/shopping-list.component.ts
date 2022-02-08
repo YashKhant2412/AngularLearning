@@ -9,7 +9,7 @@ export class ShoppingListComponent implements OnInit {
 
   
 
-  ingredients: Ingredient[] = [
+  public ingredients: Ingredient[] = [
      new Ingredient('Apples',5),
      new Ingredient('Tomatoes',10)
   ];
@@ -18,7 +18,7 @@ export class ShoppingListComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  OnIngAdd(ing:Ingredient){
+  public OnIngAdd(ing:Ingredient):void{
       this.ingredients.push(ing)
   }
 }
